@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/landing-page.css">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+</head>
+
+<% include ./partials/navbar %>
+
+  <body class="masthead text-white text-center">
+    <div>
+
+    <div class="overlay">
+      <img class="libpic" src="http://www.rentmetoday.org/blog/wp-content/uploads/2017/07/rounded_library_shelves_books_istock_000032976972_900x450.jpg"  alt="row of books">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">Welcome to LG Library</h1>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <form action="http://localhost:3000/api/admin" method="post">
+                  <label for="add"></label>
+                  <input type="text" name="title" class="form-control " placeholder="title...">
+                  <input type="text" name="author" class="form-control " placeholder="author...">
+                  <input type="text" name="genre" class="form-control " placeholder="genre...">
+                  <button type="submit" class="btn btn-block btn-lg btn-primary">Add</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1>Admin</h1>
+
+    </div>
+
+
+</body>

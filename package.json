@@ -1,0 +1,32 @@
+{
+  "name": "simple-book-store--goal-69",
+  "version": "1.0.0",
+  "description": "## Skills",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:create": "psql -f model/data/schema.sql",
+    "db:seed": "psql -f model/data/load-data.sql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oagboghi2/Simple-Book-Store-60.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oagboghi2/Simple-Book-Store-60/issues"
+  },
+  "homepage": "https://github.com/oagboghi2/Simple-Book-Store-60#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "method-override": "^2.3.10",
+    "mocha": "^5.0.0",
+    "pg-promise": "^7.4.0",
+    "startbootstrap-landing-page": "^4.0.0-beta"
+  }
+}
