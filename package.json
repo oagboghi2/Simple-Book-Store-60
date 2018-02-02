@@ -26,6 +26,7 @@
     "express": "^4.16.2",
     "method-override": "^2.3.10",
     "mocha": "^5.0.0",
+    "node-fetch": "^1.7.3",
     "pg-promise": "^7.4.0",
     "startbootstrap-landing-page": "^4.0.0-beta"
   }

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/css/landing-page.css">
     <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../public/landing-page.css">
+  <link rel="stylesheet" href="../public/styles.css">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 </head>
 
@@ -22,16 +23,29 @@
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
             <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <form class="" action="index.html" method="post">
-                  <label for="search"></label>
-                  <input type="text" name="search" class="form-control form-control-lg" placeholder "Start here..."=>
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Search</button>
-                </form>
+              <div class="col-12 col-md-9 mb-2 mb-md-0 ">
+                  <form class="search-bar" action="/api/home?searchString=" + searchString" method="POST">
+                    <label for="search"></label>
+                    <input type="search" name="searchString" class="form-control form-control-lg" value="" placeholder= "Start here...">
+                    <button type="input" class="btn btn-block btn-lg btn-primary myBtn">Search</button>
+                  </form>
+
+                  <ol class="search-list">
+                      <% userSearch.forEach(function(search){ %>
+                        <li>
+                          <span>
+                            <div>
+                              <%= book.title %>
+                            </div>
+                          </span>
+                        </li>
+                        <% }); %>
+                  </ol>
+
                 </div>
                 <div>
-                <h1>Hello</h1>
-                <ol class="list-group">
+                <h1 class="toggle-content">Hello</h1>
+                <ol class="list-group  is-visible">
                   <% userBook.forEach(function(book){ %>
                     <li>
                       <span>
@@ -39,9 +53,10 @@
                           <form action="/api/home?id=<%= book.id %>&_method=DELETE" method="POST">
                             <input type="submit" class= "btn-primary d-inline-block save" value="DELETE" />
                           </form>
-                          <form action="/api/home?id=<%= book.id %>&_method=UPDATE" method="POST">
+                          <form action="/api/edit?id=<%= book.id %>" method="GET">
                             <input type="submit" class= "btn-primary d-inline-block save" value="EDIT" />
                           </form>
+
                           </div>
                       </span>
                       </li>
@@ -54,4 +69,5 @@
         </div>
       </div>
     </div>
+    <script src="../public/script.js"></script>
 </body>

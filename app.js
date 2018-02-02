@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser');
+const fetch = require('node-fetch');
 const methodOverride = require('method-override');
 const path = require('path');
 const routes = require('./src/routes');
@@ -13,7 +14,9 @@ app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-app.use(express.static('public'))
+//app.use(express.static('../public'))Z
+app.use('/public', express.static(path.join(__dirname, 'public')))
+
 app.engine('ejs', ejs.renderFile);
 app.set('view engine', 'ejs');
 
